@@ -1,127 +1,133 @@
 {
-	"Generated": "2026-04-10T17:23:17.075Z",
+	"Generated": "2026-05-22T05:41:35.190Z",
+	"Mode": "module",
 	"GitHubOrg": "stevenvelozo",
 	"DefaultBranch": "master",
-	"Groups": [
-		{
-			"Name": "Debug",
-			"Key": "debug",
-			"Description": "",
-			"Modules": [
-				{
-					"Name": "serve",
-					"Repo": "serve",
-					"Group": "debug",
-					"Branch": "master",
-					"HasDocs": false,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": []
-				}
-			]
-		},
-		{
-			"Name": "Dist",
-			"Key": "dist",
-			"Description": "",
-			"Modules": [
-				{
-					"Name": "indoctrinate_content_staging",
-					"Repo": "indoctrinate_content_staging",
-					"Group": "dist",
-					"Branch": "master",
-					"HasDocs": false,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": []
-				}
-			]
-		},
-		{
-			"Name": "Docs",
-			"Key": "docs",
-			"Description": "",
-			"Modules": [
-				{
-					"Name": "css",
-					"Repo": "css",
-					"Group": "docs",
-					"Branch": "master",
-					"HasDocs": true,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": [
-						"css/docuserve.css"
-					]
-				}
-			]
-		},
-		{
-			"Name": "Source",
-			"Key": "source",
-			"Description": "",
-			"Modules": [
-				{
-					"Name": "certs",
-					"Repo": "certs",
-					"Group": "source",
-					"Branch": "master",
-					"HasDocs": false,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": []
-				},
-				{
-					"Name": "cli",
-					"Repo": "cli",
-					"Group": "source",
-					"Branch": "master",
-					"HasDocs": false,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": []
-				},
-				{
-					"Name": "config",
-					"Repo": "config",
-					"Group": "source",
-					"Branch": "master",
-					"HasDocs": false,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": []
-				},
-				{
-					"Name": "router",
-					"Repo": "router",
-					"Group": "source",
-					"Branch": "master",
-					"HasDocs": false,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": []
-				},
-				{
-					"Name": "server",
-					"Repo": "server",
-					"Group": "source",
-					"Branch": "master",
-					"HasDocs": false,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": []
-				},
-				{
-					"Name": "util",
-					"Repo": "util",
-					"Group": "source",
-					"Branch": "master",
-					"HasDocs": false,
-					"HasCover": false,
-					"Sidebar": [],
-					"DocFiles": []
-				}
-			]
-		}
-	]
+	"Module": {
+		"Name": "orator-ssl-proxy",
+		"Repo": "orator-ssl-proxy",
+		"Group": "",
+		"Branch": "master",
+		"HasDocs": true,
+		"HasCover": true,
+		"Sidebar": [
+			{
+				"Title": "Getting Started",
+				"Children": [
+					{
+						"Title": "Introduction",
+						"Path": "README.md"
+					},
+					{
+						"Title": "Quick Start",
+						"Path": "quickstart.md"
+					},
+					{
+						"Title": "Architecture",
+						"Path": "architecture.md"
+					}
+				]
+			},
+			{
+				"Title": "Core Concepts",
+				"Children": [
+					{
+						"Title": "Configuration Reference",
+						"Path": "configuration.md"
+					},
+					{
+						"Title": "CLI Reference",
+						"Path": "cli-reference.md"
+					},
+					{
+						"Title": "API Reference",
+						"Path": "api-reference.md"
+					}
+				]
+			},
+			{
+				"Title": "Configuration Recipes",
+				"Children": [
+					{
+						"Title": "Self-Signed with Local CA",
+						"Path": "config-selfsigned-localca.md"
+					},
+					{
+						"Title": "Self-Signed Ad-Hoc",
+						"Path": "config-selfsigned-adhoc.md"
+					},
+					{
+						"Title": "Let's Encrypt",
+						"Path": "config-letsencrypt.md"
+					},
+					{
+						"Title": "File-Based Certs",
+						"Path": "config-file-certs.md"
+					}
+				]
+			},
+			{
+				"Title": "Local Dev That Just Works",
+				"Children": [
+					{
+						"Title": "End-to-End Setup",
+						"Path": "local-dev-just-works.md"
+					},
+					{
+						"Title": "Install Local CA on macOS",
+						"Path": "install-ca-mac.md"
+					},
+					{
+						"Title": "Install Local CA on Windows",
+						"Path": "install-ca-windows.md"
+					},
+					{
+						"Title": "Install Local CA on Ubuntu",
+						"Path": "install-ca-ubuntu.md"
+					},
+					{
+						"Title": "Install Local CA on iPhone / iPad",
+						"Path": "install-ca-ios.md"
+					}
+				]
+			},
+			{
+				"Title": "Deployment",
+				"Children": [
+					{
+						"Title": "Docker",
+						"Path": "docker.md"
+					}
+				]
+			}
+		],
+		"DocFiles": [
+			".nojekyll",
+			"README.md",
+			"_brand.json",
+			"_cover.md",
+			"_sidebar.md",
+			"_topbar.md",
+			"_version.json",
+			"api-reference.md",
+			"architecture.md",
+			"cli-reference.md",
+			"config-file-certs.md",
+			"config-letsencrypt.md",
+			"config-selfsigned-adhoc.md",
+			"config-selfsigned-localca.md",
+			"configuration.md",
+			"docker.md",
+			"index.html",
+			"install-ca-ios.md",
+			"install-ca-mac.md",
+			"install-ca-ubuntu.md",
+			"install-ca-windows.md",
+			"local-dev-just-works.md",
+			"quickstart.md",
+			"retold-catalog.json",
+			"retold-keyword-index.json"
+		]
+	},
+	"Groups": []
 }

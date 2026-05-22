@@ -2,6 +2,6 @@
 	"Name": "orator-ssl-proxy",
 	"Version": "1.0.0",
 	"Description": "SSL-terminating reverse proxy with host-based routing, local CA, and Let's Encrypt support.",
-	"GeneratedAt": "2026-04-10T17:23:17.344Z",
-	"GitCommit": "d0d3bc5"
+	"GeneratedAt": "2026-05-22T05:41:35.362Z",
+	"GitCommit": "cd68d07"
 }
