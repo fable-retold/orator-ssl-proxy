@@ -1,7 +1,7 @@
 {
-	"Generated": "2026-05-22T05:41:35.190Z",
+	"Generated": "2026-05-26T18:20:44.800Z",
 	"Mode": "module",
-	"GitHubOrg": "stevenvelozo",
+	"GitHubOrg": "fable-retold",
 	"DefaultBranch": "master",
 	"Module": {
 		"Name": "orator-ssl-proxy",
