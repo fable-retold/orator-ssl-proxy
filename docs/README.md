@@ -85,10 +85,10 @@ npx orator-ssl-proxy cert-install-root-ca   # one-time trust install
 
 ## Related Packages
 
-- [orator](https://github.com/stevenvelozo/orator) - Unopinionated API server abstraction for REST and IPC
-- [orator-http-proxy](https://github.com/stevenvelozo/orator-http-proxy) - Path-based HTTP proxy for Orator applications
-- [orator-serviceserver-restify](https://github.com/stevenvelozo/orator-serviceserver-restify) - Restify service server implementation
-- [orator-static-server](https://github.com/stevenvelozo/orator-static-server) - Static file serving with subdomain routing
-- [orator-authentication](https://github.com/stevenvelozo/orator-authentication) - Cookie-based sessions and OAuth
-- [fable](https://github.com/stevenvelozo/fable) - Service provider framework
-- [pict-service-commandlineutility](https://github.com/stevenvelozo/pict-service-commandlineutility) - CLI framework used by the `orator-ssl-proxy` bin
+- [orator](https://github.com/fable-retold/orator) - Unopinionated API server abstraction for REST and IPC
+- [orator-http-proxy](https://github.com/fable-retold/orator-http-proxy) - Path-based HTTP proxy for Orator applications
+- [orator-serviceserver-restify](https://github.com/fable-retold/orator-serviceserver-restify) - Restify service server implementation
+- [orator-static-server](https://github.com/fable-retold/orator-static-server) - Static file serving with subdomain routing
+- [orator-authentication](https://github.com/fable-retold/orator-authentication) - Cookie-based sessions and OAuth
+- [fable](https://github.com/fable-retold/fable) - Service provider framework
+- [pict-service-commandlineutility](https://github.com/fable-retold/pict-service-commandlineutility) - CLI framework used by the `orator-ssl-proxy` bin

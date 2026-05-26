@@ -6,4 +6,4 @@
 - [Configuration](configuration.md)
 - [CLI](cli-reference.md)
 - [API Reference](api-reference.md)
-- [GitHub](https://github.com/stevenvelozo/orator-ssl-proxy)
+- [GitHub](https://github.com/fable-retold/orator-ssl-proxy)

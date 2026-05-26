@@ -8,5 +8,5 @@
 - WebSocket upgrade forwarding on the same dispatch axis
 - First-class Fable service provider with zero-config defaults
 
-[GitHub](https://github.com/stevenvelozo/orator-ssl-proxy)
+[GitHub](https://github.com/fable-retold/orator-ssl-proxy)
 [Get Started](#orator-ssl-proxy)

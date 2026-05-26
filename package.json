@@ -33,14 +33,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/stevenvelozo/orator-ssl-proxy.git"
+        "url": "git+https://github.com/fable-retold/orator-ssl-proxy.git"
     },
     "author": "steven velozo <steven@velozo.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/stevenvelozo/orator-ssl-proxy/issues"
+        "url": "https://github.com/fable-retold/orator-ssl-proxy/issues"
     },
-    "homepage": "https://github.com/stevenvelozo/orator-ssl-proxy#readme",
+    "homepage": "https://github.com/fable-retold/orator-ssl-proxy#readme",
     "dependencies": {
         "acme-client": "^5.4.0",
         "fable": "^3.1.72",
