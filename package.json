@@ -43,18 +43,18 @@
     "homepage": "https://github.com/fable-retold/orator-ssl-proxy#readme",
     "dependencies": {
         "acme-client": "^5.4.0",
-        "fable": "^3.1.72",
+        "fable": "^3.1.75",
         "fable-serviceproviderbase": "^3.0.19",
         "http-proxy": "^1.18.1",
         "node-forge": "^1.3.1",
-        "pict": "^1.0.368",
+        "pict": "^1.0.372",
         "pict-service-commandlineutility": "^1.0.19"
     },
     "devDependencies": {
         "chai": "^4.3.10",
         "mocha": "^10.2.0",
-        "pict-docuserve": "^1.3.3",
-        "quackage": "^1.2.4",
-        "ws": "^8.18.0"
+        "pict-docuserve": "^1.4.4",
+        "quackage": "^1.3.0",
+        "ws": "^8.21.0"
     }
 }
