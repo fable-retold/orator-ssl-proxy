@@ -1,4 +1,5 @@
 const libHTTPProxy = require('http-proxy');
+const libHTTP = require('http');
 
 /**
  * Thin wrapper around the `http-proxy` library that centralises error
@@ -17,10 +18,41 @@ class SSLProxyBackendDispatcher
 		this.fable = pFable;
 		this.log = pFable ? pFable.log : null;
 
-		this.httpProxyServer = libHTTPProxy.createProxyServer({});
+		// Pool backend connections with HTTP keep-alive. Without an explicit agent, http-proxy uses
+		// Node's default agent (keepAlive off), so every proxied request opened a brand-new TCP
+		// connection to the backend -- and a non-keep-alive request makes an HTTP/1.1 backend (e.g.
+		// restify) answer `Connection: close`, which http-proxy relays verbatim to the browser. The
+		// net effect was NO client-side keep-alive: the browser paid a fresh TCP + TLS handshake for
+		// every asset on the page. A keep-alive agent reuses backend sockets AND lets the backend hold
+		// the connection open, so keep-alive can be offered to the client. Backends behind this
+		// TLS-terminating proxy are plain HTTP, so an http.Agent is the correct pool.
+		this.backendAgent = new libHTTP.Agent(
+			{
+				keepAlive: true,
+				keepAliveMsecs: 30000,
+				maxSockets: 256,
+				maxFreeSockets: 64,
+				timeout: 60000
+			});
+		this.httpProxyServer = libHTTPProxy.createProxyServer({ agent: this.backendAgent });
 
 		// One error handler for all forwarded traffic.
 		this.httpProxyServer.on('error', this.handleProxyError.bind(this));
+
+		// Force client-facing keep-alive on HTTP/1.1. http-proxy relays the backend's Connection header
+		// verbatim, so a backend that still answers `Connection: close` would defeat the agent above and
+		// close the browser's socket anyway. Normalising it here keeps the browser on one warm TLS
+		// connection for the whole page. Safe: every proxied response is framed by Content-Length or
+		// Transfer-Encoding: chunked (both self-terminating), so the client never relies on the socket
+		// closing to know the body ended. WebSocket/upgrade (101) responses are left untouched.
+		this.httpProxyServer.on('proxyRes', (pProxyRes, pRequest) =>
+			{
+				let tmpConnection = (pProxyRes.headers && pProxyRes.headers['connection']) || '';
+				if (pRequest && pRequest.httpVersion !== '2.0' && pProxyRes.statusCode !== 101 && !/upgrade/i.test(tmpConnection))
+				{
+					pProxyRes.headers['connection'] = 'keep-alive';
+				}
+			});
 	}
 
 	handleProxyError(pError, pRequest, pResponseOrSocket)
@@ -123,6 +155,17 @@ class SSLProxyBackendDispatcher
 			try
 			{
 				this.httpProxyServer.close();
+			}
+			catch (pError)
+			{
+				// Nothing to do — we're tearing down.
+			}
+		}
+		if (this.backendAgent && typeof (this.backendAgent.destroy) === 'function')
+		{
+			try
+			{
+				this.backendAgent.destroy();
 			}
 			catch (pError)
 			{
